@@ -1,0 +1,28 @@
+
+# GitHub Pages / Jekyll configuration
+# You can change title/description and add more settings as needed.
+# Since content is plain HTML + custom CSS, we keep theme disabled.
+
+# Site settings
+title: "CELINE Open Repository"
+description: "The landscape map of relevant initiatives, technologies, frameworks, and methodologies that inform or inspire CELINE"
+url: ""
+baseurl: ""
+
+# Build settings
+# Set to `null` to avoid applying a Jekyll theme; we'll use our own CSS.
+theme: null
+plugins: []
+
+# Exclusions from build (optional)
+exclude:
+  - README.md
+  - .github/
+  - .gitignore
+
+# Defaults (optional)
+# defaults:
+#   - scope:
+#       path: ""
+#     values:
+#       layout: null

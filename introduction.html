@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CELINE Open Repository</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1 id="introduction">Introduction</h1>
+<p>The digital transformation of the energy system offers numerous
+benefits, including enhanced connectivity among energy components,
+direct market access for end-users, and seamless integration of
+renewable energy sources. However, realizing these benefits requires
+addressing challenges such as ensuring end-users' adoption of digital
+technologies, addressing societal acceptance issues, engaging
+communities effectively, and ensuring decentralization and data
+sovereignty. Additionally, an integrated framework allowing effective
+data integration across the energy value chain also including data from
+other sectors, is required.</p>
+<figure>
+<img src="img/image1.png" style="width:6.25in;height:3.22917in" />
+<figcaption><p><span id="_Toc199349657" class="anchor"></span>Figure 1:
+High-level view of the CELINE federated architecture</p></figcaption>
+</figure>
+<p>To address these challenges, CELINE introduces an innovative
+framework aimed at promoting the widespread adoption of digital
+technologies within the energy sector, fostering seamless interaction
+and collaboration among energy stakeholders. It focuses on facilitating
+the adoption of localized community-based and digital-driven energy
+innovations, which are user-centric, community-based, and tailored to
+address the needs of specific geographical areas or communities. CELINE
+will conceptualize, co-design, develop, and demonstrate an open-source
+cross-sector data-driven Digital Ecosystem and Toolbox, comprising a
+Digital Twin of community energy systems and AI Assistant Tools,
+enabling the creation of tailored cross-sector data-driven services
+aimed at:</p>
+<ol type="1">
+<li><p>Support community-led self-consumption and production
+schemes.</p></li>
+<li><p>Enhance end-users' capabilities in managing energy resources,
+optimizing energy usage, and making well-informed energy-related
+decisions.</p></li>
+<li><p>Empower end-users by improving their digital and energy literacy,
+enhancing user experience, and overcoming potential resistance and
+barriers. CELINE tools and services will be tested in three real-world
+Demonstrators (Ds) across different European regions, offering diverse
+climate, geographical, and socio-economic conditions (Valencia/ES,
+Lappeenranta/FI, and Alpe Cimbra/IT).</p></li>
+</ol>
+<h2 id="context">Context: </h2>
+<p>As Europe advances toward a digitally integrated and data-driven
+society, the concept of Data Spaces has emerged as a cornerstone of the
+European data economy. Data Spaces aim to create interoperable,
+sovereign, and trusted environments for data sharing across sectors and
+borders, in alignment with EU values and legislation. Driven by
+strategic initiatives like the European Data Strategy, the Data
+Governance Act, and numerous domain-specific efforts, Data Spaces enable
+organizations and individuals to collaborate through a federated,
+modular architecture that preserves data sovereignty and enhances
+interoperability. Within this evolving landscape, the development of
+dedicated tools to support the creation, governance, and operation of
+Data Spaces is critical. This project responds to that need by designing
+and developing a data toolbox grounded in the principles and practices
+of Dataspace architectures. The toolbox will empower stakeholders to
+build and manage interoperable, trust-enabled data ecosystems aligned
+with current and emerging European frameworks.</p>
+<h2 id="objective">Objective:</h2>
+<p>The objective of this report is to provide a State-of-the-Art (SotA)
+analysis framed as a broad landscape review that informs the design and
+implementation of the CELINE data toolbox. The analysis identifies and
+evaluates key developments across regulatory, strategic, technological,
+and semantic domains relevant to Data Spaces, clarifying that the
+inclusion of any specific initiative, technology, framework, or
+methodology does not imply CELINE’s endorsement or commitment to adopt
+it. Instead, the SotA serves to:</p>
+<ul>
+<li><p><strong>Understand the policy context</strong> by mapping EU
+legislation and strategies that shape sovereign, trusted, and
+interoperable data flows.</p></li>
+<li><p><strong>Survey active initiatives and programmes</strong> to
+reveal reusable reference architectures, certification schemes, and
+open-source building blocks.</p></li>
+<li><p><strong>Analyse technical foundations and ontologies</strong>
+that underpin interoperability, data sovereignty, and cross-sector
+collaboration.</p></li>
+<li><p><strong>Synthesise cross-cutting themes</strong> that influence
+the Dataspace paradigm and highlight gaps or innovation
+opportunities.</p></li>
+</ul>
+<p>The insights gained will guide subsequent tasks and work packages,
+where final selection, adaptation, and integration decisions will be
+made according to concrete requirements, integration needs, and
+technical feasibility, in aligning CELINE with European priorities,
+leveraging proven methodologies, and maximising the project’s impact and
+relevance.</p>
+<h2 id="scope">Scope:</h2>
+<p>This report focuses on five main areas that are foundational to the
+project’s mission:</p>
+<ul>
+<li><p><strong>EU-level policies and recommendations</strong> shaping
+data governance and interoperability.</p></li>
+<li><p><strong>Initiatives and programs</strong> that advance
+cross-sector Data Spaces.</p></li>
+<li><p><strong>EU-funded projects</strong> that provide technological
+and methodological insights.</p></li>
+<li><p><strong>Ontologies and semantic data models</strong> are
+essential for interoperable and machine-readable data sharing.</p></li>
+<li><p><strong>Key thematic challenges and trends</strong>, including
+trust, sovereignty, and federation.</p></li>
+</ul>
+<p>The analysis spans multiple domains (e.g., energy, mobility, health,
+manufacturing) to extract transferable principles and best practices
+that can inform a generic yet adaptable toolbox for Dataspace
+development.</p>
+<h2 id="deliverable-organization">Deliverable organization</h2>
+<p>The structure of this report reflects a layered approach to capturing
+the ecosystem around Data Spaces:</p>
+<ol type="1">
+<li><p><strong>EU Policies &amp; Recommendations</strong> – An overview
+of regulatory and strategic guidance from EU institutions that inform
+the design of interoperable and ethical data systems. A list of analyzed
+EU policies &amp; recommendations is presented in <a
+href="#_Ref198225223"><strong>Table 1</strong></a>, below.</p></li>
+<li><p><strong>EU Initiatives and Programs</strong> – A survey of
+large-scale European efforts such as GAIA-X, EOSC, and Common European
+Data Spaces that serve as contextual anchors. A list of analyzed EU
+initiatives and programs is presented in <a
+href="#_Ref198225245"><strong>Table 2</strong></a>.</p></li>
+<li><p><strong>Funded Projects</strong> – A targeted review of relevant
+Horizon 2020, Horizon Europe, and Digital Europe projects to derive
+lessons, gaps, and synergies. A summary of the analyzed projects is
+presented in <strong><a href="#_Ref198225259">Table
+3</a>.</strong></p></li>
+<li><p><strong>Ontologies and Data Models</strong> – An analysis of
+semantic assets that enable cross-domain data interoperability,
+discoverability, and governance. A list of analyzed ontologies and data
+models is provided in <a href="#_Ref198225268"><strong>Table
+4</strong></a>.</p></li>
+<li><p><strong>Analysis of Key Themes</strong> – A synthesis of
+recurring insights related to trust frameworks, data sovereignty,
+federation, and sustainability in Data Spaces.</p></li>
+<li><p><strong>Conclusion</strong> – A consolidation of findings and
+implications to guide the ongoing development of the project’s data
+toolbox.</p></li>
+</ol>
+<p>Each chapter contributes to a comprehensive understanding of the
+current landscape, offering a foundation for innovation that is aligned,
+interoperable, and sustainable within the evolving European data
+ecosystem.</p>
+<table style="width:100%;">
+<caption><p><span id="_Ref198225223" class="anchor"></span>Table 1: List
+of EU Policies and Recommendations considered during the SotA
+analysis.</p></caption>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 21%" />
+<col style="width: 2%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;"><strong>S#</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Policy
+Name</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Type
+(Policy/Recommendation)</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Relevant
+Sector</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>EU
+Institution</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Publication
+Date</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Status</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Link</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+<tr>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ol type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Affordable Energy Action Plan</td>
+<td style="text-align: left;">Recommendation</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">EU Institution</td>
+<td style="text-align: center;">ongoing and non-legislative</td>
+<td style="text-align: left;"> Draft</td>
+<td style="text-align: left;"><a
+href="https://energy.ec.europa.eu/strategy/affordable-energy_en#:~:text=The%20Affordable%20Energy%20Action%20Plan,%2C%20affordability%2C%20security%20and%20sustainability.&amp;amp;text=High%20energy%20costs%20are%20hurting%20EU%20citizens%20and%20businesses"><u>https://energy.ec.europa.eu/strategy/affordable-energy_en#:~:text=The%20Affordable%20Energy%20Action%20Plan,%2C%20affordability%2C%20security%20and%20sustainability.&amp;amp;text=High%20energy%20costs%20are%20hurting%20EU%20citizens%20and%20businesses</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="2" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Clean industrial deal</td>
+<td style="text-align: left;">Recommendation</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">EU Institution</td>
+<td style="text-align: center;">ongoing and non-legislative</td>
+<td style="text-align: left;">Draft</td>
+<td style="text-align: left;"><a
+href="https://www.euractiv.com/section/politics/news/the-eus-masterplan-for-competing-in-industrial-manufacturing/"><u>https://www.euractiv.com/section/politics/news/the-eus-masterplan-for-competing-in-industrial-manufacturing/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="3" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CRA (Cyber Resilience Act)</td>
+<td style="text-align: left;">Regulation</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">European Parliament &amp; Council</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847"><u>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R2847</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="4" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Digital Markets Act</td>
+<td style="text-align: left;">Policy</td>
+<td style="text-align: left;">Digital Economy</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://ec.europa.eu/dma"><u>https://ec.europa.eu/dma</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="5" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Digitalisation of Energy Action Plan</td>
+<td style="text-align: left;">Recommendation</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52022DC0552"><u>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52022DC0552</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="6" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Energy Efficiency Directive</td>
+<td style="text-align: left;">Recommendation</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;">European Parliament</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;">Draft</td>
+<td style="text-align: left;"><a
+href="https://ec.europa.eu/eed"><u>https://ec.europa.eu/eed</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="7" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Energy efficiency directive</td>
+<td style="text-align: left;">Directive</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/eli/dir/2023/1791/oj"><u>https://eur-lex.europa.eu/eli/dir/2023/1791/oj</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="8" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Energy poverty</td>
+<td style="text-align: left;">Directive</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401711"><u>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401711</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="9" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EU AI Act</td>
+<td style="text-align: left;">Policy</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">European Parliament &amp; Council</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"><u>https://eur-lex.europa.eu/eli/reg/2024/1689/oj</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="10" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EU Data Governance Act</td>
+<td style="text-align: left;">Policy</td>
+<td style="text-align: left;">Cross-sector (public, private, research,
+health, industrial)</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">25 November 2020 (Proposal), adopted on
+30 May 2022</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R0868"><u>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R0868</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="11" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EU Data Strategy</td>
+<td style="text-align: left;">Policy</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">European Parliament &amp; Council</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/eli/reg/2023/2854/oj"><u>https://eur-lex.europa.eu/eli/reg/2023/2854/oj</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="12" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EU Electricity Market Design</td>
+<td style="text-align: left;">Regulation</td>
+<td style="text-align: left;">Energy market</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;"> </td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401747"><u>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401747</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="13" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">European Electricity Directive (EMD)</td>
+<td style="text-align: left;">directive</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/eli/dir/2019/944/2024-07-16"><u>https://eur-lex.europa.eu/eli/dir/2019/944/2024-07-16</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="14" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">European Green Deal and REPower EU
+plan</td>
+<td style="text-align: left;">Plan</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">EU Institution</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en"><u>europeau
+grean deal :
+https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en
+REPOWER EU:
+https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal/repowereu-affordable-secure-and-sustainable-energy-europe_en</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="15" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Fit for 55</td>
+<td style="text-align: left;">Policy</td>
+<td style="text-align: left;">Climate &amp; Energy</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://ec.europa.eu/fit-for-55"><u>https://ec.europa.eu/fit-for-55</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="16" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">GDPR</td>
+<td style="text-align: left;">Regulation</td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">European Parliament</td>
+<td style="text-align: center;">2018</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex:32016R0679"><u>https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex:32016R0679</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="17" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Revised Renewable Energy Directive (RED
+II)</td>
+<td style="text-align: left;">DIRECTIVE</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eur-lex.europa.eu/eli/dir/2023/2413/oj"><u>https://eur-lex.europa.eu/eli/dir/2023/2413/oj</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><p><span id="_Ref198225245" class="anchor"></span>Table 2: List
+of EU Initiatives and Programs considered during the SotA
+analysis.</p></caption>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 16%" />
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 24%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;"><strong>S#</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Initiative
+Name</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>EU
+Institution</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Funding
+Program</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Start
+Date</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>End
+Date</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Status</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Link</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+<tr>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Connecting Europe Facility</td>
+<td style="text-align: left;">European Investment Bank</td>
+<td style="text-align: left;">CEF</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">2027</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"><a
+href="https://ec.europa.eu/cef"><u>https://ec.europa.eu/cef</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Digital Europe Programme</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: left;">Digital Europe</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">2027</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"><a
+href="https://digital-strategy.ec.europa.eu/"><u>https://digital-strategy.ec.europa.eu</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">European Open Science Cloud (EOSC)</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: left;">Horizon 2020, Horizon Europe</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eosc.eu/"><u>https://eosc.eu</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">GAIA-X</td>
+<td style="text-align: left;">European Commission (with key
+contributions from France and Germany)</td>
+<td style="text-align: left;">National and EU-level funding (incl.
+Horizon Europe and German BMWK)</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://www.gaia-x.eu/"><u>https://www.gaia-x.eu</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Gen4AI</td>
+<td style="text-align: left;">European Commission</td>
+<td style="text-align: left;">EIC Work Programme</td>
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">2027</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;"><a
+href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator/eic-accelerator-challenges-2025/genai4eu-creating-european-champions-generative-ai_en"><u>https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator/eic-accelerator-challenges-2025/genai4eu-creating-european-champions-generative-ai_en</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><p><span id="_Ref198225259" class="anchor"></span>Table 3: List
+of funded projects analyzed for the SotA analysis.</p></caption>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 11%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;"><strong>S#</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Project
+Name</strong></th>
+<th colspan="2"
+style="text-align: center;"><strong>Funding</strong></th>
+<th colspan="2"
+style="text-align: center;"><strong>Consortium</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Start
+Date</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>End
+Date</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Budget</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Link</strong></th>
+</tr>
+<tr>
+<th style="text-align: center;"><strong>Program</strong></th>
+<th style="text-align: center;"><strong>Call ID</strong></th>
+<th style="text-align: center;"><strong>Coordinator</strong></th>
+<th style="text-align: center;"><strong>Partners</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ol type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">AI4EU</td>
+<td style="text-align: left;">Digital Europe</td>
+<td style="text-align: left;">DIG-2022-AI</td>
+<td style="text-align: left;">European AI Institute</td>
+<td>10 universities and tech firms</td>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">2025</td>
+<td style="text-align: center;">€15M</td>
+<td style="text-align: left;"><a
+href="https://ai4eu.eu/"><u>https://ai4eu.eu</u></a></td>
+</tr>
+<tr>
+<td><ol start="2" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Battery2030+</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HE-2023-ENER</td>
+<td style="text-align: left;">CEA France</td>
+<td>20+ research institutions</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">2028</td>
+<td style="text-align: center;">€30M</td>
+<td style="text-align: left;"><a
+href="https://battery2030.eu/"><u>https://battery2030.eu</u></a></td>
+</tr>
+<tr>
+<td><ol start="3" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">BeyondEE</td>
+<td style="text-align: left;">NetZeroCities Pilot Cities</td>
+<td style="text-align: left;">HORIZON-RIA-SGA-NZC-101121530</td>
+<td style="text-align: left;">City of Lappeenranta</td>
+<td style="text-align: center;">2 partners</td>
+<td style="text-align: center;">01.05.2024</td>
+<td style="text-align: center;">30.04.2026</td>
+<td style="text-align: center;">0,6 M</td>
+<td style="text-align: left;"><a
+href="https://netzerocities.eu/lappeenrantas-pilot-city-activity-integrated-digital-solutions/"><u>https://netzerocities.eu/lappeenrantas-pilot-city-activity-integrated-digital-solutions/</u></a></td>
+</tr>
+<tr>
+<td><ol start="4" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">BIPED</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-MISS-2023-CIT-01-02</td>
+<td style="text-align: left;">DANMARKS TEKNISKE UNIVERSITET</td>
+<td>12 partners</td>
+<td style="text-align: center;">01.01.2024</td>
+<td style="text-align: center;">21.12.2026</td>
+<td style="text-align: center;">6,3M</td>
+<td style="text-align: left;"><a
+href="https://www.bi-ped.eu/"><u>https://www.bi-ped.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="5" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">BlueBird</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2024-D4-01</td>
+<td style="text-align: left;">CIMNE</td>
+<td>15 partners and 1 AE</td>
+<td style="text-align: center;">Jan. 2025</td>
+<td style="text-align: center;">Dec. 2027</td>
+<td style="text-align: center;">€5.7M</td>
+<td style="text-align: left;"><a
+href="https://bluebird-project.eu/"><u>https://bluebird-project.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="6" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CLIMRES</td>
+<td style="text-align: left;">Horizon IA</td>
+<td style="text-align: left;">HORIZON-CL5-2023-D4-02</td>
+<td style="text-align: left;">SINGULARLOGIC</td>
+<td>22 partners</td>
+<td style="text-align: center;">Jun. 2024</td>
+<td style="text-align: center;">Jun. 2027</td>
+<td style="text-align: center;">€5M</td>
+<td style="text-align: left;"><a
+href="https://climres.eu/"><u>https://climres.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="7" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">COMANAGE</td>
+<td style="text-align: left;">LIFE21-CET</td>
+<td style="text-align: left;">LIFE21-CET-ENERCOM</td>
+<td style="text-align: left;">ECOSERVEIS</td>
+<td>10 partners</td>
+<td style="text-align: center;">01.11.2022</td>
+<td style="text-align: center;">31.10.2025</td>
+<td style="text-align: center;">€1.7M</td>
+<td style="text-align: left;"><a
+href="https://comanage.spindoxlabs.com/"><u>https://comanage.spindoxlabs.com/</u></a></td>
+</tr>
+<tr>
+<td><ol start="8" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">COMMUNITAS</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2022-D3-01</td>
+<td style="text-align: left;">LABELEC ESTUDOS DESENVOLVIMENTO E
+ACTIVIDADES LABORATORIAIS SA</td>
+<td>17 partners</td>
+<td style="text-align: center;">01.01.2023</td>
+<td style="text-align: center;">30.06.2026</td>
+<td style="text-align: center;">6M</td>
+<td style="text-align: left;"><a
+href="https://communitas-project.eu/about/project/"><u>https://communitas-project.eu/about/project/</u></a></td>
+</tr>
+<tr>
+<td><ol start="9" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">COSMIC</td>
+<td style="text-align: left;">Horizon IA</td>
+<td style="text-align: left;">HORIZON-CL4-2024-DIGITAL-EMERGING-01</td>
+<td style="text-align: left;">INETUM ESPAÑA</td>
+<td>18 partners and 3 AE</td>
+<td style="text-align: center;">Dec. 2024</td>
+<td style="text-align: center;">Nov. 2027</td>
+<td style="text-align: center;">€10M</td>
+<td style="text-align: left;"><a
+href="https://cosmicproject.eu/">https://cosmicproject.eu/</a></td>
+</tr>
+<tr>
+<td><ol start="10" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DECODIT</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">Topic: HORIZON-CL5-2023-D3-03-04</td>
+<td style="text-align: left;">EUROPEAN DYNAMICS LUXEMBOURG</td>
+<td>18 partners</td>
+<td style="text-align: center;">01.06.2024</td>
+<td style="text-align: center;">01.12.2027</td>
+<td style="text-align: center;">€5.1M</td>
+<td style="text-align: left;"><a
+href="https://decodit-project.eu/"><u>https://decodit-project.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="11" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DEDALUS</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON EUROPE SC5 – Climate, Energy &amp;
+Mobility</td>
+<td style="text-align: left;">ENGINEERING</td>
+<td>21 partners</td>
+<td style="text-align: center;">May. 2023</td>
+<td style="text-align: center;">Apr. 2026</td>
+<td style="text-align: center;">€7.4M</td>
+<td style="text-align: left;"><a
+href="https://dedalus-horizon.eu/"><u>https://dedalus-horizon.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="12" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EASE</td>
+<td style="text-align: left;">Energieforschung 2022 (Austria)</td>
+<td style="text-align: left;">Climate change adaptation</td>
+<td style="text-align: left;">AIT</td>
+<td>6 partners from Austria</td>
+<td style="text-align: center;">01.11.2023</td>
+<td style="text-align: center;">31.10.2026</td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"><a
+href="https://projekte.ffg.at/projekt/4875822"><u>https://projekte.ffg.at/projekt/4875822</u></a></td>
+</tr>
+<tr>
+<td><ol start="13" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ECLIPSE</td>
+<td style="text-align: left;">Digital Europe</td>
+<td style="text-align: left;">DIGITAL-2023-DEPLOY-BESTUSE-TECH-04</td>
+<td style="text-align: left;">ETRA</td>
+<td>23 partners</td>
+<td style="text-align: center;">01.09.2024</td>
+<td style="text-align: center;">31.08.2026</td>
+<td style="text-align: center;"> €9.8M</td>
+<td style="text-align: left;"><a
+href="https://eclipse-digital.eu/"><u>https://eclipse-digital.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="14" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ECOEMPOWER</td>
+<td style="text-align: left;">LIFE-2022-CET</td>
+<td style="text-align: left;">101120775 — LIFE22-CET-ECOEMPOWER</td>
+<td style="text-align: left;">FONDAZIONE BRUNO KESSLER (FBK)</td>
+<td>10 partners</td>
+<td style="text-align: center;">01.09.2023</td>
+<td style="text-align: center;">31.08.2026</td>
+<td style="text-align: center;">1,5M</td>
+<td style="text-align: left;"><a
+href="https://ecoempower.eu/About/Project"><u>https://ecoempower.eu/About/Project</u></a></td>
+</tr>
+<tr>
+<td><ol start="15" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EDDIE</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2021-D3-01</td>
+<td style="text-align: left;">FHOOE (University of Applied Sciences
+Upper Austria)</td>
+<td style="text-align: center;">17 partners</td>
+<td style="text-align: center;">01.01.2023</td>
+<td style="text-align: center;">13.06.2026</td>
+<td style="text-align: center;">€8.8M</td>
+<td style="text-align: left;"><a
+href="https://eddie.energy/"><u>https://eddie.energy/</u></a></td>
+</tr>
+<tr>
+<td><ol start="16" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EKATE+</td>
+<td style="text-align: left;">INTERREG POCTEFA</td>
+<td style="text-align: left;">EFA41/01</td>
+<td style="text-align: left;">ESTIA</td>
+<td>7 partners</td>
+<td style="text-align: center;">Jan. 2024</td>
+<td style="text-align: center;">Dec. 2026</td>
+<td style="text-align: center;">€1.9M</td>
+<td style="text-align: left;"><a
+href="https://www.ekate.eu/es/bienvenida/"><u>https://www.ekate.eu/es/bienvenida/</u></a></td>
+</tr>
+<tr>
+<td><ol start="17" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ENERGIZE</td>
+<td style="text-align: left;">LIFE23</td>
+<td style="text-align: left;">LIFE23-CET-ENERGIZE/101167570</td>
+<td style="text-align: left;">IRIS TECHNOLOGY SOLUTIONS, SOCIEDAD
+LIMITADA</td>
+<td>9 partners</td>
+<td style="text-align: center;">Jul. 2024</td>
+<td style="text-align: center;">Jun. 2027</td>
+<td style="text-align: center;">€1.8M</td>
+<td style="text-align: left;"><a
+href="https://www.energizecommunity.eu/"><u>https://www.energizecommunity.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="18" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">HYDROGEN4EU</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HE-2023-RES</td>
+<td style="text-align: left;">Fraunhofer Institute</td>
+<td>15 partners across the EU</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">2026</td>
+<td style="text-align: center;">€20M</td>
+<td style="text-align: left;"><a
+href="https://hydrogen4eu.eu/"><u>https://hydrogen4eu.eu</u></a></td>
+</tr>
+<tr>
+<td><ol start="19" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">int:net</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2021-D3-01-03</td>
+<td style="text-align: left;">FRAUNHOFER GESELLSCHAFT ZUR FORDERUNG DER
+ANGEWANDTEN FORSCHUNG EV</td>
+<td>12 partners</td>
+<td style="text-align: center;">01.05.2022</td>
+<td style="text-align: center;">21.10.2025</td>
+<td style="text-align: center;">5 M</td>
+<td style="text-align: left;"><a
+href="https://intnet.eu/"><u>https://intnet.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="20" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">INTELLIGENT</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2023-D3-03-05</td>
+<td style="text-align: left;">R2M</td>
+<td style="text-align: left;">15 partners</td>
+<td style="text-align: center;">06.12.2024</td>
+<td style="text-align: center;">31.10.2027</td>
+<td style="text-align: left;">€5.9M</td>
+<td style="text-align: left;"><a
+href="https://www.linkedin.com/showcase/intelligent-eu/posts/?feedView=all"><u>https://www.linkedin.com/showcase/intelligent-eu/posts/?feedView=all</u></a></td>
+</tr>
+<tr>
+<td><ol start="21" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">MonitorEE</td>
+<td style="text-align: left;">Interreg Europe</td>
+<td style="text-align: left;">Greener Europe (policy objective 2) Energy
+efficiency</td>
+<td style="text-align: left;">Consortium Extremadura Energy Agency
+Consorcio Agencia Extremeña de la energía (AGENEX)</td>
+<td style="text-align: center;">6 partners</td>
+<td style="text-align: center;">01.03.2023</td>
+<td style="text-align: center;">28.02.2027</td>
+<td style="text-align: center;">1,4 M</td>
+<td style="text-align: left;"><a
+href="https://www.interregeurope.eu/monitoree"><u>https://www.interregeurope.eu/monitoree</u></a></td>
+</tr>
+<tr>
+<td><ol start="22" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">PARMENIDES</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON-CL5-2022-D3-01-10</td>
+<td style="text-align: left;">AIT</td>
+<td>7 partners</td>
+<td style="text-align: center;">01.01.2023</td>
+<td style="text-align: center;">31.12.2025</td>
+<td style="text-align: center;">€3.6M</td>
+<td style="text-align: left;"><a
+href="https://parmenides-project.eu/"><u>https://parmenides-project.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="23" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ReLIFE</td>
+<td style="text-align: left;">LIFE23-CET</td>
+<td style="text-align: left;">101167067 - LIFE-2023-CET-BETTERRENO</td>
+<td style="text-align: left;">ACCADEMIA EUROPEA DI BOLZANO Eurac
+Research</td>
+<td>8 partners</td>
+<td style="text-align: center;">01.10.2024</td>
+<td style="text-align: center;">30.09.2027</td>
+<td style="text-align: center;"> -</td>
+<td style="text-align: left;"><a
+href="https://relife-project.eu/"><u>https://relife-project.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="24" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Renowave</td>
+<td style="text-align: left;">Interreg BSR</td>
+<td style="text-align: left;">C1 - split</td>
+<td style="text-align: left;">County board of Dalarna, Sweden</td>
+<td style="text-align: center;">11 partners</td>
+<td style="text-align: center;">01.01.2023</td>
+<td style="text-align: center;">31.12.2025</td>
+<td style="text-align: center;">3,5 M</td>
+<td style="text-align: left;"><a
+href="https://interreg-baltic.eu/project/renowave/"><u>https://interreg-baltic.eu/project/renowave/</u></a></td>
+</tr>
+<tr>
+<td><ol start="25" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SUN4ALL</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON - 101032239</td>
+<td style="text-align: left;"> ECOSERVEIS</td>
+<td>11 partners</td>
+<td style="text-align: center;">01.10.2021</td>
+<td style="text-align: center;">30.09.2024</td>
+<td style="text-align: center;">€1.7M</td>
+<td style="text-align: left;"><a
+href="https://sunforall.eu/"><u>https://sunforall.eu/</u></a></td>
+</tr>
+<tr>
+<td><ol start="26" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">V2Market</td>
+<td style="text-align: left;">Horizon Europe</td>
+<td style="text-align: left;">HORIZON - 101033686</td>
+<td style="text-align: left;">ECOSERVEIS</td>
+<td>9 partners</td>
+<td style="text-align: center;">01.09.2021</td>
+<td style="text-align: center;">01.09.2024</td>
+<td style="text-align: center;">€2M</td>
+<td style="text-align: left;"><a
+href="https://v2market-project.eu/"><u>https://v2market-project.eu</u></a></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<caption><p><span id="_Ref198225268" class="anchor"></span>Table 4: List
+of analyzed ontologies and data models.</p></caption>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 36%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;"><strong>S#</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Name</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Type</strong></th>
+<th rowspan="2" style="text-align: center;"><strong>Domain</strong></th>
+<th rowspan="2"
+style="text-align: center;"><strong>Weblink</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+<tr>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ol type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ASHRAE Standard 223P</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Energy / Building</td>
+<td style="text-align: left;"><a
+href="https://docs.open223.info/"><u>https://docs.open223.info</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="2" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">BOnSAI (Smart Building Ontology for
+Ambient Intelligence)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart Home</td>
+<td style="text-align: left;"><a
+href="http://lpis.csd.auth.gr/ontologies/ontolist.html#bonsai"><u>http://lpis.csd.auth.gr/ontologies/ontolist.html#bonsai</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="3" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">BRICK Schema</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Buildings</td>
+<td style="text-align: left;"><a
+href="https://brickschema.org/"><u>BRICK Schema</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="4" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CIM (Common Information Model)</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Electrical Networks</td>
+<td style="text-align: left;"><a
+href="https://www.iec.ch/cim"><u>https://www.iec.ch/cim</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="5" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CityGML</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Urban Built Environment</td>
+<td style="text-align: left;"><a
+href="https://www.ogc.org/publications/standard/citygml/"><u>https://www.ogc.org/publications/standard/citygml/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="6" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CityGML Energy ADE</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy Use</td>
+<td style="text-align: left;"><a
+href="https://www.citygmlwiki.org/index.php?title=CityGML_Energy_ADE_V._2.0"><u>https://www.citygmlwiki.org/index.php?title=CityGML_Energy_ADE_V._2.0</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="7" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">CityGML UtilityNetworkADE</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy Networks</td>
+<td style="text-align: left;"><a
+href="https://www.citygmlwiki.org/index.php?title=CityGML_UtilityNetworkADE"><u>https://www.citygmlwiki.org/index.php?title=CityGML_UtilityNetworkADE</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="8" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Climate-Ready Barcelona Project</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://github.com/BeeGroup-cimne/biggontology"><u>https://github.com/BeeGroup-cimne/biggontology<br />
+<br />
+https://github.com/BeeGroup-cimne/biggontology/blob/main/use_cases/barcelona_use_case/README.md</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="9" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Common Grid Model Exchange (CGMES)</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Transmission Network Model Exchange
+(TSOs)</td>
+<td style="text-align: left;"><a
+href="https://www.entsoe.eu/digital/common-information-model/cim-for-grid-models-exchange/"><u>https://www.entsoe.eu/digital/common-information-model/cim-for-grid-models-exchange/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="10" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DABGEO (Domain Analysis-Based Global
+Energy Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://www.researchgate.net/publication/339043901_DABGEO_A_reusable_and_usable_global_energy_ontology_for_the_energy_domain"><u>DABGEO
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="11" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DABGEO (Domain Analysis-Based Global
+Energy Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://innoweb.mondragon.edu/ontologies/dabgeo/index-en.html"><u>https://innoweb.mondragon.edu/ontologies/dabgeo/index-en.html</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="12" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DECENT: An Ontology for Decentralized
+Governance in the Renewable Energy Sector</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Renewable Energy</td>
+<td style="text-align: left;"><a
+href="https://ieeexplore.ieee.org/document/9610686"><u>https://ieeexplore.ieee.org/document/9610686</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="13" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">DLMS/COSEM (IEC 62056)</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Electricity &amp; Utilities (Smart
+Metering)</td>
+<td style="text-align: left;"><a
+href="https://www.dlms.com/core-specifications/"><u>https://www.dlms.com/core-specifications/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="14" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EFOnt (Energy Flexibility Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Building Energy Flexibility</td>
+<td style="text-align: left;"><a
+href="https://github.com/LBNL-ETA/EnergyFlexibilityOntology"><u>https://github.com/LBNL-ETA/EnergyFlexibilityOntology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="15" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Electricity Markets Ontology (EMO)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="http://www.mascem.gecad.isep.ipp.pt/ontologies/"><u>http://www.mascem.gecad.isep.ipp.pt/ontologies/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="16" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">EM-KPI (Energy Management KPI
+Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart grid performance (energy KPIs)</td>
+<td style="text-align: left;"><a
+href="https://energy.linkeddata.es/em-kpi/ontology/index-en.html"><u>https://energy.linkeddata.es/em-kpi/ontology/index-en.html</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="17" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Energy Grid Ontology for Digital
+Twins</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://energygrid-digitaltwins.org/"><u>Energy Grid
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="18" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">HADGO (Hybrid AC/DC Grid Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://hyperride.eu/"><u>https://hyperride.eu</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="19" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">IEC 61400-25</td>
+<td style="text-align: left;">Information Model</td>
+<td style="text-align: left;">Renewable Energy (Wind Energy)</td>
+<td style="text-align: left;"><u><br />
+https://webstore.iec.ch/en/publication/29062</u></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="20" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">IEC 61850</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Electricity (Substation &amp;
+Automation)</td>
+<td style="text-align: left;"><u>https://iec61850.dvl.iec.ch/<br />
+<br />
+https://s3.wp.wsu.edu/uploads/sites/2217/2020/03/Introduction-to-IEC-61850-Basics-R2_Chi-Carnegie.pdf<br />
+<br />
+https://cdn.standards.iteh.ai/samples/20205/0c65bc990e3b478ebbabcdd4e8f93e48/IEC-TR-61850-1-2013.pdf</u></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="21" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">IFC (Industry Foundation Classes)</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Buildings</td>
+<td style="text-align: left;"><a
+href="https://ifc43-docs.standards.buildingsmart.org/"><u>https://ifc43-docs.standards.buildingsmart.org/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="22" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OASIS Energy Market Information Exchange
+(EMIX)</td>
+<td style="text-align: left;">Information Model</td>
+<td style="text-align: left;">Smart Grid (Energy Markets)</td>
+<td style="text-align: left;"><a
+href="https://docs.oasis-open.org/emix/emix/v1.0/emix-v1.0.html"><u>https://docs.oasis-open.org/emix/emix/v1.0/emix-v1.0.html</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="23" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OEMA (Ontology for Energy Management
+Applications)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://www.edwardcurry.org/publications/WOMoCoE_17.pdf"><u>OEMA
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="24" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OEO (Open Energy Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://openenergyplatform.org/ontology/"><u>https://openenergyplatform.org/ontology/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="25" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Ontology for Cybersecurity</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://link.springer.com/article/10.1007/s10270-022-01013-0"><u>Cybersecurity
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="26" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Ontology for Fault Detection</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://fault-detection-ontology.org/"><u>Fault Detection
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="27" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Ontology for Power Transformer Fault
+Diagnosis</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://power-transformer-ontology.org/"><u>Power Transformer
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="28" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Ontology on Cascading Effects in Critical
+Infrastructures</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://cascading-effects-ontology.org/"><u>Cascading Effects
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="29" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Ontology-based facility data model for
+energy management</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Energy management</td>
+<td style="text-align: left;"><a
+href="https://www.sciencedirect.com/science/article/abs/pii/S1474034615000981"><u>https://www.sciencedirect.com/science/article/abs/pii/S1474034615000981</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="30" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OntoMG (Ontology for Microgrids)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a href="https://ontomg.org/"><u>OntoMG
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="31" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OntoPowSy (Ontology for Power
+Systems)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://doi.org/10.1016/j.egyai.2020.100008">https://doi.org/10.1016/j.egyai.2020.100008</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="32" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Onto-SB: Human Profile Ontology for Energy
+Efficiency in Smart Building</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart Building Energy Efficiency &amp;
+User Profiling</td>
+<td style="text-align: left;"><a
+href="https://ieeexplore.ieee.org/abstract/document/8598509"><u>https://ieeexplore.ieee.org/abstract/document/8598509</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="33" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OntoWind Ontology</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Wind Energy</td>
+<td style="text-align: left;"><a
+href="https://github.com/dkucuk/Energy-Ontologies-OntoWind"><u>https://github.com/dkucuk/Energy-Ontologies-OntoWind</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="34" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OpenADR ontology</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Demand Response (DR) in Smart Grids</td>
+<td
+style="text-align: left;"><u>https://github.com/albaizq/OpenADRontology<br />
+<br />
+https://albaizq.github.io/OpenADRontology/OnToology/ontology/openADRontology.owl/documentation/index-en.html</u></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="35" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">OpenFMB (Open Field Message Bus)</td>
+<td style="text-align: left;">Data Model</td>
+<td style="text-align: left;">Smart Grid (Distributed Energy/IoT)</td>
+<td style="text-align: left;"><a
+href="https://openfmb.net/"><u>https://openfmb.net/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="36" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">PECO (PARMENIDES Energy Community
+Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://parmenides-project.eu/"><u>https://parmenides-project.eu<br />
+<br />
+https://parmenides.ait.ac.at/docs/peco-core/index.html</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="37" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">PQONT (Power Quality ONTology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Electrical Power Quality</td>
+<td style="text-align: left;"><a
+href="https://github.com/dkucuk/Energy-Ontologies-PQONT"><u>https://github.com/dkucuk/Energy-Ontologies-PQONT</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="38" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SAREF (Smart Appliances REFerence
+ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://saref.etsi.org/"><u>https://saref.etsi.org</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="39" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SAREF4BLDNG (ETSI)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart Home/Building</td>
+<td style="text-align: left;"><a
+href="https://saref.etsi.org/saref4bldg/v1.1.2/saref4bldg.ttl"><u>https://saref.etsi.org/saref4bldg/v1.1.2/saref4bldg.ttl</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="40" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SAREF4EHAW (ETSI)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Wearables</td>
+<td style="text-align: left;"><a
+href="https://saref.etsi.org/saref4ehaw/v1.1.1/saref4ehaw.ttl"><u>https://saref.etsi.org/saref4ehaw/v1.1.1/saref4ehaw.ttl</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="41" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SAREF4ENER (SAREF extension for
+Energy)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://saref.etsi.org/saref4ener/v1.2.1/"><u>https://saref.etsi.org/saref4ener/v1.2.1/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="42" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SARGON (Smart Energy Grid Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a href="https://sargon.eu/"><u>SARGON
+Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="43" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SEA Knowledge Model and Electrical Power
+System Ontology</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a href="https://sea-ontology.org/"><u>SEA
+Knowledge Model</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="44" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SEAS (Smart Energy Aware Systems
+Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://ci.mines-stetienne.fr/seas/index.html"><u>https://ci.mines-stetienne.fr/seas/index.html</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="45" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Smart Energy Aware Systems</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://ci.mines-stetienne.fr/seas/"><u>https://ci.mines-stetienne.fr/seas/</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="46" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Smart Home Ontology (SHO)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart Home</td>
+<td
+style="text-align: left;">https://github.com/omerbsezer/IoTSmartHomeOntologySimulator</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="47" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">Solar Soft Cost Ontology (SSCO)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Residential Solar PV Soft Costs</td>
+<td style="text-align: left;"><a
+href="https://github.com/RaiResearchGroup/SSCO"><u>https://github.com/RaiResearchGroup/SSCO</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="48" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">SSN (Semantic Sensor Network
+Ontology)</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;"><a
+href="https://www.w3.org/TR/vocab-ssn/"><u>SSN Ontology</u></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td><ol start="49" type="1">
+<li></li>
+</ol></td>
+<td style="text-align: left;">ThinkHome Ontology</td>
+<td style="text-align: left;">Ontology</td>
+<td style="text-align: left;">Smart Home</td>
+<td
+style="text-align: left;"><u>https://www.auto.tuwien.ac.at/index.php/research-fields/ontology<br />
+<br />
+https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/</u></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+
+</html>
