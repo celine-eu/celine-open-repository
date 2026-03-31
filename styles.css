@@ -46,9 +46,10 @@ body {
 
 header {
   position: fixed;
+  box-sizing: border-box;
   top: 0;
   left: 0;
-  height: 72px;
+  height: 113px;
   width: 100%;
   z-index: 2;
 
@@ -63,12 +64,16 @@ header {
   padding-right: 3vw;
   border-bottom: 2px solid;
   border-image: linear-gradient(to right, #f8cb43, #83cbca) 1;
-
 }
 
 .logo img {
   height: 69px;
   width: auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 18.5px;
 }
 
 main {
@@ -93,7 +98,8 @@ main {
   font-size: xxx-large;
   text-align: center;
   color: #f8cb43;
-  margin-top: 0;
+  margin-top: 0.15em;
+  margin-bottom: 0.65em;
 }
 
 footer {
@@ -101,8 +107,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: #fdfdfd;
-  padding-left: 3vw;
-  padding-right: 3vw;
   border-top: 2px solid;
   border-image: linear-gradient(to right, #f8cb43, #83cbca) 1;
 
@@ -284,6 +288,10 @@ div.column {
     text-align: center;
     padding: 4px;
 
+}
+
+.toc-grid a:visited {
+    color: white !important;
 }
 
 .sub-toc, .sub-toc-condensed {
