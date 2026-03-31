@@ -1,75 +1,117 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>CELINE Open Repository</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700;1,800">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-<h1>CELINE Open Repository</h1>
 
-<p>CELINE seeks to deliver an open-source Digital Ecosystem and Toolbox
-– anchored by a community-scale Digital Twin and AI Assistant tools –
-that will help citizens, local authorities, and market actors co-create
-data-driven energy services. The State-of-the-Art (SotA) analysis
-contained in this deliverable is intentionally framed as a broad
-landscape review. Its role is to map relevant initiatives, technologies,
-frameworks, and methodologies that may inform or inspire CELINE. The
-inclusion of any specific element or its potential relevance, therefore,
-does not imply endorsement or planned adoption. Final decisions on
-whether, how, or when to select, adapt, or integrate these elements will
-rest with subsequent tasks and work packages, guided by concrete
-requirements, integration needs, and technical feasibility. To ground
-the design of this toolbox, this deliverable surveys <strong>five
-knowledge layers</strong>: European policies and recommendations,
-flagship EU initiatives and programmes, funded research projects,
-existing ontologies and data models, and the cross-cutting themes that
-knit these layers together. The policy review highlights how the EU Data
-Strategy, Data Governance Act, Cyber-Resilience Act, and AI Act
-collectively articulate a vision of sovereign, trusted, and
-interoperable data flows that CELINE must honor. The mapping of
-initiatives such as GAIA-X, EOSC, and the Digital Europe Programme
-reveals maturing reference architectures, certification schemes, and
-open-source building blocks that can be reused rather than reinvented. A
-scan of <strong>thirty-plus</strong> Horizon 2020 and Horizon Europe
-projects uncovers proven techniques, ranging from semantic mediation
-services to decentralized identity wallets, as well as gaps in long-term
-governance and community engagement that CELINE can address. The
-ontology review catalogues <strong>more than forty</strong> domain and
-cross-domain models, from energy stalwarts like CIM and SAREF to
-emerging frameworks for flexibility, power-quality, and cyber-physical
-security. Synthesizing these strands, the deliverable distils (in
-Chapter 6) three recurrent themes, 1) Interoperability &amp;
-Standardization, 2) Data Sovereignty &amp; Trust, and 3) Cross-Sector
-Collaboration, that together define the enabling conditions for a
-resilient European data economy. Interoperability emerges as both a
-syntactic task, solved through established IEC and IDSA connectors, and
-a semantic challenge that demands a modular stack of aligned ontologies
-and dynamic reasoning services. Data sovereignty and trust require that
-CELINE embed policy-aware data-sharing agreements, eIDAS2-compliant
-identity schemes, and audit-ready security controls from day one.
-Cross-sector collaboration, often proclaimed yet seldom realized, calls
-for governance models that equalize the voice of small municipalities,
-SMEs, and citizens while preventing sectoral dominance. Collectively,
-these insights shape a roadmap for CELINE’s toolbox: adopt open,
-extensible standards; wrap data assets in machine-enforceable licenses;
-provide low-threshold onboarding mechanisms; and support
-knowledge-graph–driven digital twins that reveal both technical and
-social interdependencies. By codifying lessons from the European
-landscape, the analysis ensures CELINE’s deliverables will be compatible
-with emerging Data Spaces, scalable across diverse regions, and capable
-of accelerating the continent’s twin digital-green transition.<p>
+  <header class="site-header">
+    <div class="logo">
+      <a href="https://www.celineproject.eu/">
+        <img src="img/Celine_Logo_Color.png" alt="Project CELINE Logo">
+      </a>
+    </div>
+  </header>
 
-<h2>Table of Contents</h2>
-<p><a href="introduction.html">Introduction</a></p>
-<p><a href="eu-policies-recommendations.html">EU Policies &amp; Recommendations</a></p>
-<p><a href="eu-initiatives-and-programs.html">EU Initiatives and Programs</a></p>
-<p><a href="funded-projects.html">Funded Projects</a></p>
-<p><a href="ontologies-and-data-models.html">Ontologies and Data Models</a></p>
-<p><a href="analysis-of-key-themes.html">Analysis of Key Themes</a></p>
-<p><a href="conclusion.html">Conclusion</a></p>
-<p><a href="bibliography.html">Bibliography</a></p>
+  <main>
+
+    <h1 class="site-title">CELINE Open Repository</h1>
+
+    <div class="toc-grid">
+      <a class="toc-button" href="01-introduction.html"><span>Introduction</span></a>
+      <a class="toc-button" href="02-eu-policies-and-recommendations.html"><span>EU Policies &amp; Recommendations
+        </span></a>
+      <a class="toc-button" href="03-eu-initiatives-and-programs.html"><span>EU Initiatives &amp; Programs</span></a>
+      <a class="toc-button" href="04-funded-projects.html"><span>Funded Projects </span></a>
+      <a class="toc-button" href="05-ontologies-and-data-models.html"><span>Ontologies &amp; Data Models</span></a>
+      <a class="toc-button" href="06-analysis-of-key-themes.html"><span>Analysis of Key Themes</span></a>
+    </div>
+
+    <h2 id="about">About </h2>
+    <p><strong>CELINE</strong> seeks to deliver an open-source digital
+      ecosystem and toolbox – anchored by a community-scale digital twin and
+      AI assistant tools – that will help citizens, local authorities, and
+      market actors co-create data-driven energy services. The
+      state-of-the-art (SotA) analysis contained in this repository is
+      intentionally framed as a broad landscape review. Its role is to map
+      relevant initiatives, technologies, frameworks, and methodologies that
+      may inform or inspire CELINE. The inclusion of any specific element or
+      its potential relevance, however, does not imply endorsement or planned
+      adoption.</p>
+    <p>To ground the design of the CELINE toolbox, this repository provides
+      a survey of the following <strong>five knowledge layers</strong>:</p>
+    <ol type="1">
+      <li>
+        <p>European policies and recommendations,</p>
+      </li>
+      <li>
+        <p>flagship EU initiatives and programmes,</p>
+      </li>
+      <li>
+        <p>funded research projects,</p>
+      </li>
+      <li>
+        <p>existing ontologies and data models, and</p>
+      </li>
+      <li>
+        <p>cross-cutting themes that knit these layers together.</p>
+      </li>
+    </ol>
+    <p>The policy review highlights how the EU Data Strategy, Data
+      Governance Act, Cyber-Resilience Act, and AI Act collectively articulate
+      a vision of sovereign, trusted, and interoperable data flows that CELINE
+      must honor. The mapping of initiatives such as GAIA-X, EOSC, and the
+      Digital Europe Programme reveals maturing reference architectures,
+      certification schemes, and open-source building blocks that can be
+      reused rather than reinvented. A scan of more than thirty Horizon 2020
+      and Horizon Europe projects uncovers proven techniques, ranging from
+      semantic mediation services to decentralized identity wallets, as well
+      as gaps in long-term governance and community engagement that CELINE can
+      address. The ontology review catalogues more than forty domain and
+      cross-domain models, from energy stalwarts like CIM and SAREF to
+      emerging frameworks for flexibility, power-quality, and cyber-physical
+      security.</p>
+    <p>Synthesizing these strands, this repository distils three recurrent
+      themes: <strong>Interoperability &amp; Standardization</strong>,
+      <strong>Data Sovereignty &amp; Trust</strong>, and <strong>Cross-Sector
+        Collaboration</strong>, that together define the enabling conditions for
+      a resilient European data economy. Interoperability emerges as both a
+      syntactic task (solved through established dataspace connectors) and a
+      semantic challenge that demands a modular stack of aligned ontologies
+      and dynamic reasoning services. Data sovereignty and trust require that
+      CELINE embed policy-aware data-sharing agreements and audit-ready
+      security controls from day one. Cross-sector collaboration, often
+      proclaimed yet seldom realized, calls for governance models that
+      equalize the voice of small municipalities, SMEs, and citizens while
+      preventing sectoral dominance.
+    </p>
+    <p>Collectively, these insights shape a roadmap for the CELINE toolbox:
+      adopt open, extensible standards; wrap data assets in
+      machine-enforceable licenses; provide low-threshold onboarding
+      mechanisms; and support knowledge-graph–driven digital twins that reveal
+      both technical and social interdependencies. By codifying lessons from
+      the European landscape, the analysis ensures CELINE’s output will be
+      compatible with emerging dataspace, scalable across diverse regions, and
+      capable of accelerating the Europe’s twin digital-green transition.</p>
+
+  </main>
+
+  <footer>
+    <p class="site-footer-content"><img alt="European Flag"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/330px-Flag_of_Europe.svg.png"
+        align="left" style="margin-right: 10px" height="57" /> This development has been supported by the
+      <a href="https://cordis.europa.eu/project/id/101160667">CELINE</a>
+      project of the European Union’s research and innovation programme Horizon Europe under the grant agreement ID
+      101160667.
+    </p>
+  </footer>
 
 </body>
 
