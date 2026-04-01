@@ -82,7 +82,7 @@ main {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 60em;
+  max-width: 56%;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 30px;
@@ -92,6 +92,7 @@ main {
   text-rendering: optimizeLegibility;
   font-kerning: normal;
   background-color: #fdfdfd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
 }
 
 .site-title {
@@ -301,8 +302,9 @@ div.column {
     background-color: #fdfdfd;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
     z-index: 1000;
+    max-width: 15%;
 }
 
 .sub-toc h2, .sub-toc-condensed h2 {
